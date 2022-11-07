@@ -1,5 +1,6 @@
 # Typescript-Basic
 WEB502 - Lập trình Typescript
+
 You can learn more in the Create React App documentation.
 
 To learn React, check out the React documentation.
