@@ -1,17 +1,15 @@
 import { useState } from 'react'
-
-type Show = {
-  name : string,
-}
+import ShowInfo from './components/ShowInfo'
+import { InfoType } from './types/product';
 
 function App() {
-  const [myName, setMyName] = useState("Cong Dinh")
-function Show(props: Show){
-  return <div>{props.name}</div>
-}
+  const [info, setInfo] = useState<InfoType>({
+    name : "Công Định",
+    age : 20
+  });
   return (
     <div className="App">
-      <Show name={myName}/>
+      <ShowInfo info={info}/>
     </div>
   )
 }
