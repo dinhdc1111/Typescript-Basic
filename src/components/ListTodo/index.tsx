@@ -14,11 +14,10 @@ const ListTodo = (props: ListTodoProps) => {
     return (
     <div>
         {props.todos.map((todo) => (
-        <div key={todo.id}>
-        {todo.title}{" "}
-        <button onClick={() => props.onRemove(todo.id)}>Delete</button>
-        </div>
-    ))}
+                <div key={todo.id}>
+                    {todo.title} <button onClick={() => props.onRemove(todo.id)}>Delete</button>
+                </div>
+            ))}
     </div>
 );
 };
