@@ -1,5 +1,5 @@
 import React from 'react'
-import { InfoType } from '../types/product'
+import { InfoType } from '../../types/product'
 
 type ShowInfoProps = {
     info: InfoType
