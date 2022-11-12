@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import ShowInfo from "./components/ShowInfo/ShowInfo";
 import Todo from "./components/Todo";
+import {Routes, Route, Outlet, Link} from "react-router-dom";
 import { InfoType } from "./types/product";
+import LayoutWebsite from "./components/Layouts/LayoutWebsite";
+import HomePage from "./pages/home";
+import AboutPage from "./pages/about";
 
 function App() {
   const [info, setInfo] = useState<InfoType>({
@@ -10,8 +13,14 @@ function App() {
   });
   return (
     <div className="App">
-      <ShowInfo info={info} />
-      <Todo />
+      <Routes>
+        <Route path="/" element={<LayoutWebsite />}>
+          <Route index element={<HomePage/>} />
+          <Route path="about" element={<AboutPage/>} />
+          <Route path="todo" element={<Todo/>}/>
+        </Route>
+        <Route path="*" element={<h1>Not Found</h1>}/>
+      </Routes>
     </div>
   );
 }
