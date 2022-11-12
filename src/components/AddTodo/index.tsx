@@ -14,7 +14,10 @@ const AddTodo = (props: Props) => {
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <h2>Thêm sản phẩm</h2>
-                <input type="text" placeholder='Nhập tên sản phẩm' {...register("title")}/> <br />
+                <input type="text" placeholder='Nhập tên sản phẩm' {...register("title",{required: true, minLength: 6})}/>
+                {errors.title && errors.title.type === "required" && <p>Bắt buộc nhập</p>}
+                {errors.title && errors.title.type === "minLength" && <p>Ít nhất 6 kí tự</p>}
+                <br />
                 <input type="checkbox" {...register("completed")} /> Complete
                 <br />
                 <button>Thêm mới</button>
